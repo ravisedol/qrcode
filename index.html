@@ -118,6 +118,12 @@
 		$('.generate-qr-code').on('click', function(){
 
 			var text = $('.qr-url').val();
+			
+			if(!text){
+			    alert("Input a text");
+			    $('.qr-url').focus();
+			    return;
+			}	
 
 			// Clear Previous QR Code
 			$('#qrcode').empty();
