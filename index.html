@@ -139,6 +139,11 @@
 	    <script>
 		$(function(){
 		    var path = window.location.href;
+			
+			if(path === 'https://ravisedol.github.io/qrcode/'){
+			    $('#btn_').attr('href',path);
+			    console.log("2 "+path);
+			}
 		    
 		    $('#buttons a').each(function(){
 			var btn = $(this);
@@ -148,14 +153,6 @@
 			    $(btn).addClass('btn-success');
 			} else {
 			    $(btn).addClass('btn-warning');
-				if(path === 'https://ravisedol.github.io/qrcode/'){
-				    $('#btn_').addClass('btn-success');
-				console.log("2 "+path);
-				}
-				if(path == 'https://ravisedol.github.io/qrcode/'){
-				    $('#btn_').addClass('btn-success');
-				console.log("3 "+path);
-				}
 			}
 			    
 			    
