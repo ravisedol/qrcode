@@ -70,14 +70,24 @@
 	
 
 	<div class="container-fluid p-4">
-
+		
 		<div class="row justify-content-center">
 
-			<div class="col-sm-8 col-12 text-center">
-				<h3 class="text-info">QR Code Generate</h3><br>
-				  <a href="./vcard.html">vCard</a>
+		    <div class="col-sm-6 col-md-6 col-12 text-center">
+
+			<div class="btn-group btn-group-toggle" id="buttons">
+
+			    <a href="./index.html" class="btn">Text QRCode Generate</a>
+
+			    <a href="./vcard.html" class="btn"> vCard QRcode Generate</a>
+
 			</div>
-			
+
+		    </div>
+
+		</div>
+
+		<div class="row justify-content-center">
 
 			<div class="col-sm-8 col-12">
 
@@ -113,6 +123,22 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 	
 	<script type="text/javascript" src="qrcode.js"></script>
+	
+	    <script>
+		$(function(){
+		    var path = window.location.href;
+		    $('#buttons a').each(function(){
+			var btn = $(this);
+			console.log(path);
+			// if the current path is like this link, make it active
+			if (this.href === path) {
+			    $(btn).addClass('btn-success');
+			} else {
+			    $(btn).addClass('btn-warning');
+			}
+		    })
+		})
+	    </script>
 
 	<script>
 
