@@ -71,7 +71,7 @@
 
 	<div class="container-fluid p-4">
 		
-		<div class="row justify-content-center">
+		<div class="row justify-content-center mb-4">
 
 		    <div class="col-sm-6 col-md-6 col-12 text-center">
 
@@ -130,15 +130,19 @@
 		    
 		    $('#buttons a').each(function(){
 			var btn = $(this);
-			console.log(path);
+// 			console.log(path);
 			// if the current path is like this link, make it active
 			if (this.href === path) {
 			    $(btn).addClass('btn-success');
-			} else if(this.href === 'https://ravisedol.github.io/qrcode/'){
-			    $('#btn_').addClass('btn-success');
 			} else {
 			    $(btn).addClass('btn-warning');
 			}
+			    
+			if(path === 'https://ravisedol.github.io/qrcode/'){
+			    $('#btn_').addClass('btn-success');
+			}
+			    
+			    
 		    })
 		})
 	    </script>
