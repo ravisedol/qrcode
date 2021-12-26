@@ -66,6 +66,16 @@
 	}
 
 	</style>
+	
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-JQSJ77JQY3"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-JQSJ77JQY3');
+	</script>
 
 </head>
 <body>
@@ -132,7 +142,7 @@
 		    
 		    $('#buttons a').each(function(){
 			var btn = $(this);
-// 			console.log(path);
+			console.log(path);
 			// if the current path is like this link, make it active
 			if (this.href === path) {
 			    $(btn).addClass('btn-success');
