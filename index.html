@@ -142,7 +142,7 @@
 		    
 		    $('#buttons a').each(function(){
 			var btn = $(this);
-			console.log(path);
+	
 			// if the current path is like this link, make it active
 			if (this.href === path) {
 			    $(btn).addClass('btn-success');
@@ -150,6 +150,11 @@
 			    $(btn).addClass('btn-warning');
 				if(path === 'https://ravisedol.github.io/qrcode/'){
 				    $('#btn_').addClass('btn-success');
+				console.log("2 "+path);
+				}
+				if(path == 'https://ravisedol.github.io/qrcode/'){
+				    $('#btn_').addClass('btn-success');
+				console.log("3 "+path);
 				}
 			}
 			    
