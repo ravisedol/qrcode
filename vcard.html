@@ -12,6 +12,22 @@
   <body>
 
     <div class="container-fluid py-4">
+	    
+	<div class="row justify-content-center">
+
+            <div class="col-sm-6 col-md-6 col-12 text-center">
+
+                <div class="btn-group btn-group-toggle" id="buttons">
+
+                    <a href="./index.html" class="btn">Text QRCode Generate</a>
+        
+                    <a href="./vcard.html" class="btn"> vCard QRcode Generate</a>
+        
+                </div>
+                
+            </div>
+
+        </div>
 
         <div class="row">
 
@@ -119,6 +135,22 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
+	  
+    <script>
+        $(function(){
+            var path = window.location.href;
+            $('#buttons a').each(function(){
+                var btn = $(this);
+                console.log(path);
+                // if the current path is like this link, make it active
+                if (this.href === path) {
+                    $(btn).addClass('btn-success');
+                } else {
+                    $(btn).addClass('btn-warning');
+                }
+            })
+        })
+    </script>
 
     <script>
 
