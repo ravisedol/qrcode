@@ -194,12 +194,51 @@
 				let qelem = document.querySelector('#qrcode img')
 				let dlink = document.querySelector('#qrdl')
 				let qr = qelem.getAttribute('src');
-				dlink.setAttribute('href', qr);
-				dlink.setAttribute('download', 'qrcode.png');
-				dlink.removeAttribute('hidden');
+				
+				// Convert to base64 image
+				let base64image = getBase64Image(qr).then(function(base64image) {
+
+					// console.log(base64image);
+
+					dlink.setAttribute('href', base64image);
+					dlink.setAttribute('download', 'qrcode.png');
+					dlink.removeAttribute('hidden');
+
+				}, function(reason) {
+					console.log(reason); 
+				});
+				
+				
 			}, 500);
 
 		});
+		
+		// Generate image
+		function getBase64Image(imgUrl) {
+
+			return new Promise(
+			function(resolve, reject) {
+
+				var img = new Image();
+				img.src = imgUrl;
+				img.setAttribute('crossOrigin', 'anonymous');
+
+				img.onload = function() {
+					var canvas = document.createElement("canvas");
+					canvas.width = img.width;
+					canvas.height = img.height;
+					var ctx = canvas.getContext("2d");
+					ctx.drawImage(img, 0, 0);
+					var dataURL = canvas.toDataURL("image/png");
+					resolve(dataURL);
+				}
+				img.onerror = function() {
+					reject("The image could not be loaded.");
+				}
+
+			});
+
+		}
 
 	</script>
 
